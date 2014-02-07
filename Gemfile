@@ -32,13 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
-gem 'resque', '~> 1.25.1', require: 'resque/server'
-gem 'redis', '~> 3.0.6'
-gem 'devise', '~> 3.2.2'
-gem "font-awesome-rails", '~> 4.0.3.1'
-gem 'activerecord-session_store', '~> 0.1.0'
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -50,3 +43,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
+gem 'resque', '~> 1.25.1', require: 'resque/server'
+gem 'foreman' ,'~> 0.63.0'
+gem 'redis', '~> 3.0.6'
+gem 'devise', '~> 3.2.2'
+gem "font-awesome-rails", '~> 4.0.3.1'
+gem 'activerecord-session_store', '~> 0.1.0'
