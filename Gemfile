@@ -32,8 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
-gem 'resque', require: 'resque/server'
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
+gem 'resque', '~> 1.25.1', require: 'resque/server'
 gem 'redis', '~> 3.0.6'
 
 # Use ActiveModel has_secure_password
