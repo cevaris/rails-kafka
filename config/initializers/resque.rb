@@ -1,1 +1,1 @@
-Resque.redis = Redis.new(EpicAnalytics::Application.config.redis)
+Resque.redis = Redis.new(Rq::Application.config.redis)
