@@ -35,8 +35,9 @@ end
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'resque', '~> 1.25.1', require: 'resque/server'
 gem 'redis', '~> 3.0.6'
-gem 'devise'
-gem "font-awesome-rails"
+gem 'devise', '~> 3.2.2'
+gem "font-awesome-rails", '~> 4.0.3.1'
+gem 'activerecord-session_store', '~> 0.1.0'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
