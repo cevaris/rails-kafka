@@ -28,8 +28,7 @@ namespace :events do
   task :create => :environment do
 
     creds = JSON.parse(File.read("#{Rails.root}/.credentials.json"))
-    # consumer = Kafka::Consumer.new(topic: "events")
-
+    
     TweetStream.configure do |config|
       config.consumer_key       = creds['consumer_key']
       config.consumer_secret    = creds['consumer_secret']
@@ -39,9 +38,7 @@ namespace :events do
     end
 
     uri = URI.parse("http://localhost:3000/events")
-    http = Net::HTTP.new(uri.host,uri.port)
-    # https.use_ssl = false
-    
+    http = Net::HTTP.new(uri.host,uri.port)    
 
     # This will pull a sample of all tweets based on
     # your Twitter account's Streaming API role.
@@ -54,10 +51,6 @@ namespace :events do
       res = http.request(req)
 
     end
-
-
-
-
     
   end
 end
