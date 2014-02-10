@@ -17,11 +17,11 @@ class KafkaEvents
         producer.batch do
           batch.each do |message|
             puts "PreKafka - #{message}"
-            producer.send(Kafka::Message.new(message))
+            producer.push(Kafka::Message.new(message))
           end
         end
       end
     end
-    
+
   end
 end

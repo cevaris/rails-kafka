@@ -6,9 +6,6 @@ require 'net/http'
 require 'net/https'
 
 
-
-
-
 namespace :events do
   desc "Tail from the Kafka log file"
   task :tail, [:topic] => :environment do |task, args|
@@ -19,9 +16,8 @@ namespace :events do
 
     consumer.loop do |messages|
       messages.each do |message|
-        puts message.inspect
-        # json = JSON.parse(message.payload)
-        # puts json
+        json = JSON.parse(message.payload)
+        puts json
         # puts JSON.pretty_generate(json), "\n"
       end
     end
