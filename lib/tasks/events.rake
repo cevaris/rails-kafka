@@ -19,8 +19,10 @@ namespace :events do
 
     consumer.loop do |messages|
       messages.each do |message|
-        json = JSON.parse(message.payload)
-        puts JSON.pretty_generate(json), "\n"
+        puts message.inspect
+        # json = JSON.parse(message.payload)
+        # puts json
+        # puts JSON.pretty_generate(json), "\n"
       end
     end
   end
@@ -38,19 +40,16 @@ namespace :events do
     end
 
     uri = URI.parse("http://localhost:3000/events")
-    http = Net::HTTP.new(uri.host,uri.port)    
+    # http = Net::HTTP.new(uri.host,uri.port)    
 
     # This will pull a sample of all tweets based on
     # your Twitter account's Streaming API role.
     TweetStream::Client.new.sample do |status|
       
       # puts "#{status.text}"
-      
-      req = Net::HTTP::Post.new(uri.path)
-      req.body = {event: status}.to_json
-      res = http.request(req)
+
+      Net::HTTP.post_form(uri, {event: status.to_json})
 
     end
-    
   end
 end
