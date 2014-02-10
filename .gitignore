@@ -32,3 +32,5 @@ Thumbs.db
 
 .ruby-gemset
 *.rdb
+
+.credentials.json
