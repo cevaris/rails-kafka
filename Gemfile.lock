@@ -63,6 +63,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kafka-rb (0.0.15)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -159,6 +160,7 @@ DEPENDENCIES
   foreman (~> 0.63.0)
   jbuilder (~> 1.2)
   jquery-rails
+  kafka-rb
   rails (= 4.0.0)
   redis (~> 3.0.6)
   resque (~> 1.25.1)

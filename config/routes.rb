@@ -2,6 +2,7 @@ Rq::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users, :only => [:show]
+  post '/events', to: 'events#create'
 
   root :to => "home#index"
 

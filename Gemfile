@@ -52,3 +52,8 @@ gem 'redis', '~> 3.0.6'
 gem 'devise', '~> 3.2.2'
 gem "font-awesome-rails", '~> 4.0.3.1'
 gem 'activerecord-session_store', '~> 0.1.0'
+gem 'kafka-rb'
+
+
+
+
