@@ -36,10 +36,7 @@ namespace :events do
     end
 
     uri = URI.parse("http://localhost:3000/events")
-    # http = Net::HTTP.new(uri.host,uri.port)    
 
-    # This will pull a sample of all tweets based on
-    # your Twitter account's Streaming API role.
     TweetStream::Client.new.sample do |status|
       
       # puts "#{status.text}"
