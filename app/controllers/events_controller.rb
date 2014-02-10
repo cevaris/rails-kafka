@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+
   def create
-    puts params
+    render status: 200, nothing: true
   end
 end

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def event_handler
-    @event_handler ||= EventHandler.new(KafkaLog.instance)
+    @event_handler ||= EventHandler.new(KafkaEvents.instance)
   end
 
   def flush_events_to_log

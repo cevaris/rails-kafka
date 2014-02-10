@@ -2,6 +2,11 @@ require 'kafka'
 require 'securerandom'
 require 'tweetstream'
 
+require 'net/http'
+require 'net/https'
+
+
+
 
 
 namespace :events do
@@ -33,13 +38,24 @@ namespace :events do
       config.auth_method        = :oauth
     end
 
+    uri = URI.parse("http://localhost:3000/events")
+    http = Net::HTTP.new(uri.host,uri.port)
+    # https.use_ssl = false
+    
+
     # This will pull a sample of all tweets based on
     # your Twitter account's Streaming API role.
     TweetStream::Client.new.sample do |status|
-      # The status object is a special Hash with
-      # method access to its keys.
-      puts "#{status.text}"
+      
+      # puts "#{status.text}"
+      
+      req = Net::HTTP::Post.new(uri.path)
+      req.body = {event: status}.to_json
+      res = http.request(req)
+
     end
+
+
 
 
     
